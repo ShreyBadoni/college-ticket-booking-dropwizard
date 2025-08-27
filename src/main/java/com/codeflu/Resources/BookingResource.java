@@ -50,7 +50,7 @@ public class BookingResource {
         booking.setEventId(eventId);
         booking.setSeatsBooked(seats);
 
-        Booking createdBooking = bookingService.createBooking(booking);
+        Booking createdBooking = bookingService.createBooking(booking.getEventId(),booking.getUserId(),booking.getSeatsBooked());
 
         // Update event booked seats (optional business rule)
         event.setBookedSeats(event.getBookedSeats() + seats);
